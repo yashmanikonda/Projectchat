@@ -1,8 +1,8 @@
-import * as firebase from 'firebase';
+
 import React from 'react';
 import './App.css';
 
-import 'firebase/app';
+import firebase from "firebase/compat/app";
 import 'firebase/firestone';
 import 'firebase/auth';
 
