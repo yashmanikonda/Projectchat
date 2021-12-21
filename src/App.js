@@ -3,8 +3,8 @@ import React from 'react';
 import './App.css';
 
 import firebase from "firebase/compat/app";
-import 'firebase/firestone';
-import 'firebase/auth';
+import 'firebase/compat/firestone';
+import 'firebase/compat/auth';
 
 import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
