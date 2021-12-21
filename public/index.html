@@ -1,43 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+	<head>
+		<title> Chat </title>
+		<style>
+		
+			* {
+				font-family: sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			body{
+            background-image: url("bg4.jpeg");
+            overflow-y:hidden;
+            background-repeat:none;
+			background-size: 1277px;
+        	}
+			.header-area {
+                width :300px;
+				height: 40px;
+				display:block;
+				color: rgb(194, 28, 28);
+				padding: 4px;
+			}
+			
+			
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+            #logo{
+    			width: 400px;
+    			height: 150px;
+    			margin-left: -17%;
+    			display: block;
+    			margin-top:28px;
+    			margin-left: 0px;
+        	}
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+
+            ul{
+            /* display: inline-block; */
+            float:right;
+            margin-top: px;
+
+        	}       
+        	ul a{
+
+            margin:10px;
+            border: 2px solid #1f307c;
+            border-radius: 8px;
+            background-color: rgb(224, 221, 221);
+            font-size: x-large;
+            padding: 4px;
+            color: rgb(15, 14, 41);
+            text-decoration:none;
+        	}
+        	ul a:hover{
+            	color: rgb(157, 156, 175);
+            }
+
+			.message-area {
+                /* float: left; */
+                height: 411px;
+                padding: 3px;
+                margin:20px;
+                position:relative; 
+                width:586px; 
+                background-color:rgb(140, 202, 189);
+                margin-top: 150px; 
+                overflow: auto; 
+                border:4px solid black;
+                /* display: block; */
+				border-radius: 5px;
+			}
+			
+			.typing-area {
+				margin-top: -20px;
+				padding: 3px;
+    			height: 6%;
+    			width: 850px;
+  			}
+			
+			.typing-box {
+				width: 90%;
+				height: 35px;
+				padding: 1px;
+                resize: none;
+                width: 469px;
+                margin-left: 23px;
+				border-radius: 3px;
+			}
+			
+			.send-button {
+				border: 2px solid brown;
+                width: 7%;
+                background: rgb(255 24 0);
+                color: white;
+                padding: 8px;
+                border-radius:15px;
+                font-size: 18px;
+                position: absolute;
+                margin-top: -1px;
+                margin-left: 6px;
+			}
+			
+			.message-box {
+				margin-top: 10px;
+			}
+			
+			.others-message-box {
+				
+			}
+			
+			.my-message-box {
+				text-align: right;
+				background: white;
+			}
+			
+			.message {
+				max-width: 70%;
+				border-radius: 5%;
+				padding: 5px;
+				box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+			}
+			
+			.my-message {
+				float: right;
+				background-color:darkgray;
+				color: white;
+			}
+			
+			.others-message {
+				float: left;
+				background: white;
+			}
+			
+			.separator {
+				width: 100%;
+				height: 8px;
+				float: left;
+			}
+			#set{
+				font-size: 23px;	
+			}
+        #box{
+            border: 2px solid black;
+            width: 317px;
+            height: 167px;
+		}
+		 #slider{
+		 	width:320px;
+		 	height: 170px;
+		 	margin: 0px;
+		 	position: relative;
+		 	border: 10px solid rgb(56, 49, 49);
+		 	/* box-shadow: 0px 0px 5px 2px #ccc; */
+            top: -500px;
+            right:-900px;
+		 }
+		/* .button1{
+		 	padding: 15px;
+		 	border: none;
+		 	background: #07e5db;
+		 	font-size: 30px;
+		 	color: white;
+       position: relative;
+		 		top: -209px;
+      cursor: pointer;
+      right: 33px;
+      border: 2px solid black;
+		 }
+		 .button2{
+			 padding: 15px;
+		 	border: none;
+		 	background:#07e5db;
+		 	font-size: 30px;
+		 	color: white;
+		 	position:relative;
+            top: -209px;
+    cursor: pointer;
+    right: -547px;
+    border: 2px solid black;
+		 
+        } */
+
+        .next{
+        	border-radius: 10px 0px 0px 10px;
+        	margin-left: 950px;
+        }
+        .prew{
+        	border-radius: 0px 10px 10px 0px;
+        }
+        #ntt{
+            display: block;
+            position: relative;
+            left: 747px;
+            bottom: 460px;
+            width: 7rem;
+            resize:none;
+            font-family:cursive;
+        }
+
+        #textarea{
+            padding:10px;
+            overflow-y: auto;
+			border: 5px solid brown;
+			background-color: rgb(221, 215, 215);
+        }
+		</style>
+	</head>
+	
+	<body>
+	
+		<div class="header-area">
+                <img id="logo" src="log.png" alt="Website Logo" width="6%" height="6%">
+                
+            <!-- </div>  -->
+		</div>
+        <nav>
+            <!-- <img id="logo" src="logo.jpg" alt="Website Logo" width="6%" height="6%"> -->
+            <ul>
+                <a  href="https://www.wikipedia.org/" target="_blank">Wikipedia</a>
+                <a  href="https://www.youtube.com/" target="_blank">Youtube</a>
+                <a  href="https://gaana.com/" target="_blank">Music</a>
+                <a  href="https://www.oxfordlearnersdictionaries.com/" target="_blank">Dictionary</a>
+                <a  href="https://translate.google.co.in/" target="_blank">Google Translator</a>
+                </ul>
+        </nav>
+		
+		<div class="message-area" id="message-area">
+			<!-- <div class="message-box others-message-box">
+				<div class="message others-message"> Hi, How are you? </div>
+				<div class="separator"></div>
+			</div>
+			
+			<div class="message-box my-message-box">
+				<div class="message my-message"> I am good, how are you doing? </div>
+				<div class="separator"></div>
+			</div> -->
+        </div>
+		<div class="typing-area">
+			<input class="typing-box" id="typing-box">
+			<button class="send-button" onclick="sendMessage()"> Send </button>
+		</div>
+		
+    <div id="slider">
+		<div id="box">
+			<img src="a.png">
+		</div>
+
+		<!-- buttons for controls slider -->
+		<!-- <button class="button1" onclick="prewImage()"></button> -->
+		<!-- <button class="button2" onclick="nextImage()"></button> -->
+	</div>
+    <p id="ntt">Collection : <textarea id="textarea" name="notes" cols="100" rows="8" placeholder="Type your notes here..." style="resize:none"></textarea></p>
+
+ 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
+		<script>
+			
+			var socket;
+			window.onload = function() {
+				
+				socket = io.connect('http://localhost:8000');
+				
+				socket.on('message-from-others', function(message){
+					var html = '<div class="message-box others-message-box">' +
+								'<div class="message others-message"> ' + message + ' </div>' +
+								'<div class="separator"></div>' +
+							'</div>';
+							
+					document.getElementById("message-area").innerHTML += html;
+				})
+			}
+		
+			function sendMessage() {
+				var message = document.getElementById("typing-box").value;
+				var html = '<div class="message-box my-message-box">' +
+								'<div class="message my-message"> ' + message + ' </div>' +
+								'<div class="separator"></div>' +
+							'</div>';
+							
+				document.getElementById("message-area").innerHTML += html;
+				document.getElementById("typing-box").value = "";
+				
+				socket.emit('codeboard-message', message);
+			}
+
+
+
+    var slider_content = document.getElementById('box');
+
+  	// contain images in an array
+    var image = ['a','b', 'c', 'd','e','f','g','h','i','j'];
+
+    var i = image.length;
+
+
+    // function for next slide 
+
+    function nextImage(){
+    	if (i<image.length) {
+    		i= i+1;
+    	}else{
+    		i = 1;
+    	}
+    	  slider_content.innerHTML = "<img src="+image[i-1]+".png>";
+    }
+
+
+    // function for prew slide
+
+    function prewImage(){
+
+    	if (i<image.length+1 && i>1) {
+    		i= i-1;
+    	}else{
+    		i = image.length;
+    	}
+    	  slider_content.innerHTML = "<img src="+image[i-1]+".png>";
+
+    }
+
+  
+  // script for auto image slider
+
+  setInterval(nextImage , 2000);
+		
+		</script>
+    
+	
+	</body>
+
 </html>
